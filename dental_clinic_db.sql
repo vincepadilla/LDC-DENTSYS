@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 19, 2026 at 01:50 PM
+-- Generation Time: Feb 21, 2026 at 02:45 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -59,7 +59,8 @@ INSERT INTO `appointments` (`appointment_id`, `patient_id`, `team_id`, `service_
 ('A008', 'P007', 'T001', 'S002', 'Comembo Branch', '2026-02-27', '5:00PM-6:00PM', 'nineBatch', 'Reschedule', 'AD7D5821', '2026-01-23 15:30:00', 'used', 1, '2026-01-21 03:46:02'),
 ('A009', 'P008', 'T001', 'S002', 'Comembo Branch', '2026-01-29', '8:00AM-9:00AM', 'firstBatch', 'Pending', 'DE5328D3', '2026-01-29 09:30:00', 'used', 1, '2026-01-21 04:10:27'),
 ('A010', 'P001', 'T001', 'S1001', 'Comembo Branch', '2026-02-21', '7:00PM-8:00PM', 'lastBatch', 'Confirmed', NULL, NULL, 'issued', 0, '2026-02-10 09:03:19'),
-('A011', 'P009', 'T001', 'S002', 'Comembo Branch', '2026-02-17', '9:00AM-10:00AM', 'secondBatch', 'Pending', NULL, NULL, 'issued', 0, '2026-02-17 00:33:24');
+('A011', 'P009', 'T001', 'S002', 'Comembo Branch', '2026-02-17', '9:00AM-10:00AM', 'secondBatch', 'Pending', NULL, NULL, 'issued', 0, '2026-02-17 00:33:24'),
+('A012', 'P010', 'T001', 'S004', 'Taytay Rizal Branch', '2026-02-25', '1:00PM-2:00PM', 'fifthBatch', 'Pending', NULL, NULL, 'issued', 0, '2026-02-21 13:36:15');
 
 -- --------------------------------------------------------
 
@@ -141,7 +142,8 @@ INSERT INTO `dental_blogs` (`blog_id`, `title`, `content`, `published_at`, `stat
 ('B006', 'Dental Health Tip of', 'Keep your smile healthy by brushing twice a day and visiting your dentist regularly!', '2026-01-03 13:40:13', 'published', '2026-01-03 05:40:13'),
 ('B007', 'Dental Health Tip of', 'Keep your smile healthy by brushing twice a day and visiting your dentist regularly!', '2026-01-08 09:00:16', 'published', '2026-01-08 01:00:16'),
 ('B008', 'Dental Health Tip of', 'Keep your smile healthy by brushing twice a day and visiting your dentist regularly!', '2026-02-03 08:52:23', 'published', '2026-02-03 00:52:23'),
-('B009', 'Dental Health Tip of', 'Keep your smile healthy by brushing twice a day and visiting your dentist regularly!', '2026-02-14 13:36:15', 'published', '2026-02-14 05:36:15');
+('B009', 'Dental Health Tip of', 'Keep your smile healthy by brushing twice a day and visiting your dentist regularly!', '2026-02-14 13:36:15', 'published', '2026-02-14 05:36:15'),
+('B010', 'Sparkle & Shine: Qui', 'Want to keep your smile looking and feeling its best? It\'s easier than you think! A few simple daily habits can make a huge difference in your oral health and overall confidence.\n\nFirst, let\'s talk brushing. Aim for two minutes, twice a day, using a soft-bristled brush. Don\'t forget to gently brush your tongue too, to combat bad breath and improve freshness. Next up: flossing. This essential step reaches where your toothbrush can\'t, removing plaque and food particles between your teeth and under the gumline. Make it a daily habit – your gums will thank you!\n\nBeyond your routine, consider your diet. Limiting sugary snacks and drinks helps protect your teeth from decay. And finally, don\'t underestimate the power of regular dental check-ups and professional cleanings. Our friendly team is here to help keep your smile sparkling and healthy. Book your next visit today and let your confident smile shine!', '2026-02-20 09:20:12', 'published', '2026-02-20 01:20:12');
 
 -- --------------------------------------------------------
 
@@ -188,7 +190,7 @@ CREATE TABLE `feedback` (
 --
 
 INSERT INTO `feedback` (`feedback_id`, `user_id`, `patient_name`, `feedback_text`, `appointment_id`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'U0007', 'Von Sabado', 'Im So Happy and Satisfied', 0, 'approved', '2025-11-22 08:58:51', '2025-11-22 08:58:51'),
+(1, 'U0007', 'Von Sabado', 'Im So Happy and Satisfied', 0, 'rejected', '2025-11-22 08:58:51', '2026-02-21 04:43:47'),
 (2, 'U0009', 'Charmmain Rabano', 'The treatment is nice and fast.', 0, 'approved', '2025-11-24 07:13:06', '2025-11-24 07:13:06');
 
 -- --------------------------------------------------------
@@ -229,7 +231,7 @@ CREATE TABLE `multidisciplinary_dental_team` (
 --
 
 INSERT INTO `multidisciplinary_dental_team` (`team_id`, `user_id`, `first_name`, `last_name`, `specialization`, `email`, `phone`, `status`, `last_active`, `created_at`) VALUES
-('T001', 'U0005', 'Michelle', 'Landero', 'Dentist', 'arisukazamoto@gmail.com', '0919299223', 'active', '2026-02-17 09:35:59', '2025-11-03 01:51:03');
+('T001', 'U0005', 'Michelle', 'Landero', 'Dentist', 'arisukazamoto@gmail.com', '0919299223', 'inactive', '2026-02-21 21:39:18', '2025-11-03 01:51:03');
 
 -- --------------------------------------------------------
 
@@ -263,7 +265,8 @@ INSERT INTO `patient_information` (`patient_id`, `user_id`, `first_name`, `last_
 ('P006', 'U0013', 'Mike', 'Wheeler', '1994-07-25', 'male', '09528676520', 'yaweti1928@hudisk.com', '112 Lincoln Ave Hawkings Sub', '2026-01-03 05:02:50'),
 ('P007', 'U0014', 'Jane', 'Cruz', '2008-01-10', 'male', '09556765130', 'mikewheelerpogi@gmail.com', 'Bldg 6 Doctor Jose P. Rizal Extension', '2026-01-21 01:21:43'),
 ('P008', 'U0011', 'Juan', 'Dela Cruz', '2004-06-15', 'male', '09286765204', 'mlanderodentalclinic@gmail.com', 'Sta Cruz, Taytay Rizal', '2026-01-21 04:10:27'),
-('P009', 'U0015', 'Mark', 'Laungayan', '2008-02-13', 'male', '09887979656', 'uzumakinaruto6012@gmail.com', 'Lawin St Taguig City', '2026-02-17 00:33:24');
+('P009', 'U0015', 'Mark', 'Laungayan', '2008-02-13', 'male', '09887979656', 'uzumakinaruto6012@gmail.com', 'Lawin St Taguig City', '2026-02-17 00:33:24'),
+('P010', 'U0016', 'Elone', 'Musk', '2008-02-20', 'male', '09228611945', 'hexeje5409@bitonc.com', 'Bulacan', '2026-02-21 12:49:53');
 
 -- --------------------------------------------------------
 
@@ -299,7 +302,8 @@ INSERT INTO `payment` (`payment_id`, `appointment_id`, `method`, `account_name`,
 ('PY008', 'A008', 'Cash', '', '', 500.00, '', '', 'paid', '2026-01-21 03:46:02'),
 ('PY009', 'A009', 'Cash', '', '', 500.00, '', '', 'pending', '2026-01-21 04:10:27'),
 ('PY010', 'A010', 'GCash', 'Kenneth Jana', '09939588662', 1232131.00, '89976564', '../uploads/698af456ed745_unnamed__2_.png', 'pending', '2026-02-10 09:03:19'),
-('PY011', 'A011', 'GCash', 'Mark Laungayan', '09879795632', 500.00, '3435362', '../uploads/6993b754ad7e4_9fe5cb4cf8686749c231fe849612f6f0.jpg', 'pending', '2026-02-17 00:33:24');
+('PY011', 'A011', 'GCash', 'Mark Laungayan', '09879795632', 500.00, '3435362', '../uploads/6993b754ad7e4_9fe5cb4cf8686749c231fe849612f6f0.jpg', 'pending', '2026-02-17 00:33:24'),
+('PY012', 'A012', 'GCash', 'Elone Musk', '09884848863', 500.00, '8474775', '../uploads/6999b4cfd0590_tuitionreceipt.png', 'pending', '2026-02-21 13:36:15');
 
 -- --------------------------------------------------------
 
@@ -347,6 +351,48 @@ INSERT INTO `services` (`service_id`, `service_category`, `sub_service`, `descri
 ('S1004', 'General Dentistry', 'Tooth Restoration (Pasta)', 'A procedure to repair teeth damaged by decay, fractures, or cracks. We gently remove the damaged material and restore the tooth\'s shape, function, and appearance using durable, tooth-colored composite resin (or other chosen materials). This prevents further decay and eliminates sensitivity.', 0.00, '2025-11-09 10:59:55'),
 ('S2001', 'Orthodontics', 'Retainers', 'Custom-made dental appliances used after orthodontic treatment (like braces or aligners). Retainers are essential to stabilize and maintain the new position of your teeth, preventing them from shifting back and ensuring your beautifully straight smile lasts a lifetime.', 0.00, '2025-11-09 11:08:05'),
 ('S5001', 'Prosthodontics Treatments (Pustiso)', 'Dentures', 'Removable appliances that replace missing teeth and surrounding tissues. We provide full (complete) and partial dentures that are custom designed to restore your ability to chew, speak clearly, and improve your smile and facial contours.', 0.00, '2025-11-09 11:13:27');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `site_content`
+--
+
+CREATE TABLE `site_content` (
+  `content_id` int(11) NOT NULL,
+  `content_key` varchar(100) NOT NULL,
+  `content_value` text DEFAULT NULL,
+  `content_type` varchar(50) DEFAULT 'text',
+  `section` varchar(50) DEFAULT 'general',
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `site_content`
+--
+
+INSERT INTO `site_content` (`content_id`, `content_key`, `content_value`, `content_type`, `section`, `updated_at`, `created_at`) VALUES
+(1, 'hero_title', 'Your Smile Deserves the Best Treatment', 'text', 'hero', '2026-02-21 04:53:34', '2026-02-21 04:38:44'),
+(2, 'hero_subtitle', 'Professional dental care in a comfortable and friendly environment', 'text', 'hero', '2026-02-21 04:51:31', '2026-02-21 04:38:44'),
+(3, 'services_title', 'Our Services', 'text', 'services', '2026-02-21 04:51:31', '2026-02-21 04:38:44'),
+(4, 'services_subtitle', 'Comprehensive dental care for the whole family', 'text', 'services', '2026-02-21 04:51:31', '2026-02-21 04:38:44'),
+(5, 'contact_title', 'Contact Us', 'text', 'contact', '2026-02-21 04:51:31', '2026-02-21 04:38:44'),
+(6, 'contact_subtitle', 'Send us a message about appointments, services, or any other concerns about us.', 'text', 'contact', '2026-02-21 04:51:31', '2026-02-21 04:38:44'),
+(7, 'contact_help_title', 'We\'re here to help', 'text', 'contact', '2026-02-21 04:51:31', '2026-02-21 04:38:44'),
+(8, 'contact_help_text', 'Call us, send an email, or use the form to send your questions and we \'ll get back to you as soon as possible.', 'text', 'contact', '2026-02-21 04:51:31', '2026-02-21 04:38:44'),
+(9, 'contact_hours', 'Mon - Sun: 8:00 AM - 8:00 PM', 'text', 'contact', '2026-02-21 04:51:31', '2026-02-21 04:38:44'),
+(10, 'contact_phone', '0922 861 1987', 'text', 'contact', '2026-02-21 04:51:31', '2026-02-21 04:38:44'),
+(11, 'contact_email', 'landerodentalclinic@gmail.com', 'text', 'contact', '2026-02-21 04:51:31', '2026-02-21 04:38:44'),
+(12, 'location_title', 'Visit Our Clinics', 'text', 'location', '2026-02-21 04:51:31', '2026-02-21 04:38:44'),
+(13, 'location_subtitle', 'Find us in Comembo, Taguig City or Taytay, Rizal. Use the map and contact details below for easy navigation.', 'text', 'location', '2026-02-21 04:51:31', '2026-02-21 04:38:44'),
+(14, 'location_comembo', 'Anahaw St. Comembo, Taguig City', 'text', 'location', '2026-02-21 04:51:31', '2026-02-21 04:38:44'),
+(15, 'location_taytay', 'Lot 2 Block 5, Turquoise Corner, Golden City Subd, Amber, Dolores, Taytay, 1920 Rizal', 'text', 'location', '2026-02-21 04:51:31', '2026-02-21 04:38:44'),
+(16, 'dentist_title', 'Our Dentist', 'text', 'dentist', '2026-02-21 04:51:31', '2026-02-21 04:38:44'),
+(17, 'dentist_subtitle', 'Meet Our Professional Dentist', 'text', 'dentist', '2026-02-21 04:51:31', '2026-02-21 04:38:44'),
+(18, 'dentist_name', 'Dr. Michelle Landero', 'text', 'dentist', '2026-02-21 04:51:31', '2026-02-21 04:38:44'),
+(19, 'dentist_specialty', 'Dentist', 'text', 'dentist', '2026-02-21 04:51:31', '2026-02-21 04:38:44'),
+(20, 'dentist_experience', 'With over 10 years of experience in providing exceptional dental care.', 'text', 'dentist', '2026-02-21 04:51:31', '2026-02-21 04:38:44');
 
 -- --------------------------------------------------------
 
@@ -440,10 +486,10 @@ CREATE TABLE `user_account` (
 --
 
 INSERT INTO `user_account` (`user_id`, `role`, `status`, `last_login`, `username`, `first_name`, `last_name`, `birthdate`, `gender`, `address`, `password_hash`, `email`, `phone`, `contactNumber_verify`, `created_at`) VALUES
-('U0001', 'patient', 'active', '2026-02-17 00:08:33', 'vince', 'Vince Henrick', 'Padilla', '2015-11-04', 'Male', 'Lawin St Taguig City', '$2y$10$0iOkoTCVPQas8LMIlMJxR.Qn3Ct5szu0sFofMZO.BlcWyc4oB0XXm', 'kirito.nakamura7@gmail.com', '09938383851', 'verified', '2025-11-01 02:24:21'),
+('U0001', 'patient', 'active', '2026-02-21 04:52:36', 'vince', 'Vince Henrick', 'Padilla', '2015-11-04', 'Male', 'Lawin St Taguig City', '$2y$10$0iOkoTCVPQas8LMIlMJxR.Qn3Ct5szu0sFofMZO.BlcWyc4oB0XXm', 'kirito.nakamura7@gmail.com', '09938383851', 'verified', '2025-11-01 02:24:21'),
 ('U0003', 'patient', 'active', NULL, 'naruto12', 'Naruto', 'Uzumaki', '2015-11-15', 'Male', 'Pinagsama Taguig City', '$2y$10$3z4B7P1ZA1l8rbearzvOCu2tqa9oGTCIqi7gv/BDgM7JErvjb0F46', 'kirito.nakamura3@gmail.com', '09286765223', 'verified', '2025-11-01 05:28:23'),
 ('U0004', 'patient', 'active', NULL, 'ashley', 'Ashley', 'Gonzales', '2016-11-30', 'Male', 'Anahaw St Comembo Taguig City', '$2y$10$cKZ21NJJca/NNuyaUl.Q5eFTHSJ9TUafKK.4SRBesVOIAlBjaS6Ye', 'lafox77022@dwakm.com', '09949495656', 'verified', '2025-11-03 00:29:29'),
-('U0005', 'admin', 'active', '2026-02-17 01:35:59', 'admin', 'Michelle Landero', 'Landero', '2018-11-12', 'Male', 'Kyoto Japan', '$2y$10$VkO.yPV1Xi/.7FQgWjgYHuI2Gckbjp/jTBdmmXJXafHpKrI6e7que', 'arisukazamoto@gmail.com', '0919299223', 'verified', '2025-11-03 00:48:04'),
+('U0005', 'admin', 'active', '2026-02-21 13:37:55', 'admin', 'Michelle Landero', 'Landero', '2018-11-12', 'Male', 'Kyoto Japan', '$2y$10$VkO.yPV1Xi/.7FQgWjgYHuI2Gckbjp/jTBdmmXJXafHpKrI6e7que', 'arisukazamoto@gmail.com', '0919299223', 'verified', '2025-11-03 00:48:04'),
 ('U0006', 'patient', 'active', '2026-01-21 04:08:16', 'kenneth', 'Kenneth', 'Jana', '2005-07-06', 'male', 'Anahaw St, Comembo. Taguig City', '$2y$10$Prd1QuepoUXja3./fNpPNu92.cwqynUThplFLOfNL83suy8C9tB6e', 'bodagi7557@limtu.com', '09988976545', 'verified', '2025-11-08 00:31:58'),
 ('U0007', 'patient', 'active', '2025-11-23 12:56:21', 'von', 'Von', 'Sabado', '2007-11-07', 'male', 'Lawin St Taguig City', '$2y$10$VZzSR9BkzQMglf0IZ1N/3OixRpwsBns2tk04GAC/PD4A3ctqAAKli', 'vonjeresespi1@gmail.com', '09287977979', 'verified', '2025-11-13 04:57:23'),
 ('U0008', 'patient', 'active', '2025-12-02 02:23:10', 'charles', 'Charles', 'Ramos', '2005-11-23', 'male', 'Amarillo St Taguig City', '$2y$10$xksl0yu97OmyBJHm.WjWFOxBTxgLB07fso.n62oVWeOsnu7axudSG', 'yeyof71832@gyknife.com', '92867657245', 'verified', '2025-11-16 06:53:58'),
@@ -453,7 +499,8 @@ INSERT INTO `user_account` (`user_id`, `role`, `status`, `last_login`, `username
 ('U0012', 'patient', 'active', '2025-12-19 04:46:48', 'arzen', 'Arzen', 'Navor', '2007-12-12', 'male', 'Sta Cruz, Taytay Rizal', '$2y$10$ZGEE4wu90rNGVxahLR0OqedBvHyIjSHzDEMeSOFbuFUk9eUJUq1Bm', 'arzennavor@gmail.com', '09778776562', 'verified', '2025-12-19 04:46:36'),
 ('U0013', 'patient', 'active', '2026-01-03 06:20:58', 'mike', 'Mike', 'Wheeler', '1994-07-25', 'male', '112 Lincoln Ave Hawkings Sub', '$2y$10$.dnP97oxvUQiEpS9o5RVpuh6WFn7v0QJhYbnY.QNKjupKKBD8oYU.', 'yaweti1928@hudisk.com', '09528676520', 'verified', '2026-01-03 04:28:21'),
 ('U0014', 'patient', 'active', '2026-01-21 01:03:27', 'jane', 'Jane', 'Cruz', '2008-01-10', 'male', 'Bldg 6 Doctor Jose P. Rizal Extension', '$2y$10$raUshW7ZtJsXD0zn101BiOqq1T0kbxPaeQGbKZKqvY5mca/8FMsga', 'mikewheelerpogi@gmail.com', '09556765130', 'verified', '2026-01-21 01:03:14'),
-('U0015', 'patient', 'active', '2026-02-17 01:16:12', 'marklaungayan', 'Mark', 'Laungayan', '2008-02-13', 'male', 'Lawin St Taguig City', '$2y$10$rY8u5WonX6lbWi9el/a.Ju8aSufEM5yslVjS2nOpIdc3ksYNOiRCe', 'uzumakinaruto6012@gmail.com', '09887979656', 'verified', '2026-02-17 00:31:18');
+('U0015', 'patient', 'active', '2026-02-21 04:07:07', 'marklaungayan', 'Mark', 'Laungayan', '2008-02-13', 'male', 'Lawin St Taguig City', '$2y$10$OIf7eCa84NZsZZBQMYta0ewAGSK7BMhay00u/n3or3dcnxtn1osFe', 'uzumakinaruto6012@gmail.com', '09887979656', 'verified', '2026-02-17 00:31:18'),
+('U0016', 'patient', 'active', '2026-02-21 13:35:38', 'elone', 'Elone', 'Musk', '2008-02-20', 'male', 'Bulacan', '$2y$10$YGN2vmQOQkhgf8K2VQxFBOwBvtNvQdJae4NMeg7wncUUOiIG4uiXa', 'hexeje5409@bitonc.com', '09228611945', 'verified', '2026-02-21 12:43:25');
 
 -- --------------------------------------------------------
 
@@ -477,7 +524,10 @@ CREATE TABLE `walkin_appointments` (
 --
 
 INSERT INTO `walkin_appointments` (`walkin_id`, `patient_id`, `service`, `sub_service`, `dentist_name`, `branch`, `status`, `created_at`) VALUES
-('WI002', 'P001', 'Orthodontics', 'Braces', 'Dr. Michelle Landero', 'Comembo Branch', 'Walk-in', '2026-02-11 06:08:08');
+('WI002', 'P001', 'Orthodontics', 'Braces', 'Dr. Michelle Landero', 'Comembo Branch', 'Completed', '2026-02-11 06:08:08'),
+('WI003', 'P009', 'Orthodontics', 'Braces', 'Dr. Michelle Landero', 'Comembo Branch', 'Walk-in', '2026-02-20 01:10:32'),
+('WI004', 'P009', 'General Dentistry', 'Checkups', 'Dr. Michelle Landero', 'Comembo Branch', 'Walk-in', '2026-02-20 01:12:56'),
+('WI005', 'P009', 'Orthodontics', 'Retainers', 'Dr. Michelle Landero', 'Taytay Rizal Branch', 'Walk-in', '2026-02-20 01:19:13');
 
 --
 -- Indexes for dumped tables
@@ -575,6 +625,13 @@ ALTER TABLE `services`
   ADD PRIMARY KEY (`service_id`);
 
 --
+-- Indexes for table `site_content`
+--
+ALTER TABLE `site_content`
+  ADD PRIMARY KEY (`content_id`),
+  ADD UNIQUE KEY `content_key` (`content_key`);
+
+--
 -- Indexes for table `system_alerts`
 --
 ALTER TABLE `system_alerts`
@@ -631,6 +688,12 @@ ALTER TABLE `holidays`
 --
 ALTER TABLE `promotional_emails`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `site_content`
+--
+ALTER TABLE `site_content`
+  MODIFY `content_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- Constraints for dumped tables
